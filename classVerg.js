@@ -1,7 +1,7 @@
 class Verg extends kendaniEak{
     constructor(x, y) {
         super(x,y)
-        this.energy = 6;
+        this.energy = 5;
     }
     stanalNorKordinatner() {
         this.directions = [

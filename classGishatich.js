@@ -1,9 +1,10 @@
-class Gishatich extends kendaniEak{
+class Gishatich extends kendaniEak {
     constructor(x, y) {
-        super(x,y)
+        super(x, y)
         this.energy = 5;
     }
-    stanalNorKordinatner() {
+
+    stanalnorKordinatner() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -16,10 +17,6 @@ class Gishatich extends kendaniEak{
         ];
     }
 
-    yntrelVandak(ch) {
-        this.stanalNorKordinatner();
-        return super.yntrelVandak(ch);
-    }
     sharjvel() {
         var norVandak = random(this.yntrelVandak(0));
         if (norVandak) {
@@ -31,6 +28,25 @@ class Gishatich extends kendaniEak{
             this.x = norVandak[0];
             this.y = norVandak[1];
 
+        }
+    }
+    bazmanal() {
+        if (this.energy >= 6) {
+            var rin = Math.round(random(1));
+
+            var norVandak = random(this.yntrelVandak(rin));
+            if (norVandak) {
+                var x = norVandak[0];
+                var y = norVandak[1];
+                if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
+
+                    var norGish = new Gishatich(x, y);
+
+                    gish.push(norGish);
+                    matrix[y][x] = 3;
+                    this.energy = 2;
+                }
+            }
         }
     }
     utel() {
@@ -54,37 +70,20 @@ class Gishatich extends kendaniEak{
         }
         return false;
     }
-
-
-    bazmanal() {
-        if (this.energy >= 4) {
-            //var ran = Math.round(random(1));
-
-            var norVandak = random(this.yntrelVandak(0));
-            if (norVandak) {
-                var x = norVandak[0];
-                var y = norVandak[1];
-                if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-
-                    var norGish = new Gishatich(x, y);
-
-                    gish.push(norGish);
-                    matrix[y][x] = 3;
-                    this.energy = 2;
-                }
-            }
-        }
-    }
     mahanal() {
         if (this.energy <= 0) {
             for (var i in gish) {
                 if (gish[i].x == this.x && gish[i].y == this.y) {
                     gish.splice(i, 1);
                     matrix[this.y][this.x] = 0;
-
                     break;
                 }
             }
         }
+    }
+
+    yntrelVandak(ch) {
+        this.stanalnorKordinatner();
+        return super.yntrelVandak(ch);
     }
 }

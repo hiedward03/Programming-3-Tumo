@@ -19,7 +19,6 @@ class Xotaker extends kendaniEak {
 
     sharjvel() {
         var norVandak = random(this.yntrelVandak(0));
-        console.log(norVandak)
         if (norVandak) {
             if (this.energy > 0) {
                 this.energy--;
