@@ -1,3 +1,5 @@
+
+
 class Xotaker extends kendaniEak {
     constructor(x, y) {
         super(x, y)
@@ -52,25 +54,6 @@ class Xotaker extends kendaniEak {
             }
         }
     }
-    bazmanalno() {
-        if (this.energy >= 22222) {
-            var rin = Math.round(random(1));
-
-            var norVandak = random(this.yntrelVandak(rin));
-            if (norVandak) {
-                var x = norVandak[0];
-                var y = norVandak[1];
-                if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-
-                    var norXotaker = new Xotaker(x, y);
-
-                    xotaker.push(norXotaker);
-                    matrix[y][x] = 2;
-                    this.energy = 2;
-                }
-            }
-        }
-    }
     utel() {
         var norVandak = random(this.yntrelVandak(1));
         if (norVandak) {
@@ -85,23 +68,6 @@ class Xotaker extends kendaniEak {
                     if (this.energy < 8) {
                         this.energy++;
                     }
-                    return true;
-                }
-            }
-
-        }
-        return false;
-    }
-
-    utelmah() {
-        var norVandak = random(this.yntrelVandak(6));
-        if (norVandak) {
-            matrix[this.y][this.x] = 0; 
-            this.x = norVandak[0];
-            this.y = norVandak[1];
-            for (var i in ver) {
-                if (ver[i].x == this.x && ver[i].y == this.y) {
-                    ver.splice(i, 1);
                     return true;
                 }
             }

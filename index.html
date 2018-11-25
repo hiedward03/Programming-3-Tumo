@@ -1,6 +1,8 @@
 <html>
    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
        <script src="classBase.js"></script>
        <script src="classGrass.js"></script>
        <script src="classGishatich.js"></script>
@@ -9,7 +11,10 @@
        <script src="classSarsap.js"></script>
        <script src="classVerg.js"></script>
        <script src="script.js"></script>
+       <link rel="stylesheet" type="text/css" href="/style.css">
    </head>
-   <body>
+   <body onload="myFunction()" style="margin:0;">
+        <div id="loader"></div>
+        <h1>Please click on Canvas</h1>
    </body>
 </html>

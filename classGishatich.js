@@ -1,3 +1,4 @@
+
 class Gishatich extends kendaniEak {
     constructor(x, y) {
         super(x, y)
@@ -40,9 +41,9 @@ class Gishatich extends kendaniEak {
                 var y = norVandak[1];
                 if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
 
-                    var norGish = new Gishatich(x, y);
+                    var norGishatich = new Gishatich(x, y);
 
-                    gish.push(norGish);
+                    gish.push(norGishatich);
                     matrix[y][x] = 3;
                     this.energy = 2;
                 }
